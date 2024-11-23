@@ -1,4 +1,3 @@
-#!/bin/bash
 install_libssl() {
     local libssl_path="/usr/lib/x86_64-linux-gnu/libssl.so.1.1"
     if [ ! -f "$libssl_path" ]; then
@@ -10,6 +9,10 @@ install_libssl() {
 install_libssl
 if [ ! -d "/etc/adm-lite/slow" ]; then
     mkdir -p /etc/adm-lite/slow
+fi
+if [ ! -f "/bin/autoboot" ]; then
+    echo "#!/bin/bash" > /bin/autoboot
+    chmod +x /bin/autoboot
 fi
 wget -q -O /etc/adm-lite/slow/s.sh https://raw.githubusercontent.com/joaquin1444/MOD-V6/refs/heads/main/script-v6/Otros/s.sh && \
 chmod +x /etc/adm-lite/slow/s.sh && \
