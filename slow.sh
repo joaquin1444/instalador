@@ -1,5 +1,5 @@
 rm -f /etc/adm-lite/slow/s.sh
-rm slow.sh
+rm -f slow.sh
 install_libssl() {
     local libssl_path="/usr/lib/x86_64-linux-gnu/libssl.so.1.1"
     if [ ! -f "$libssl_path" ]; then
@@ -16,6 +16,7 @@ if [ ! -f "/bin/autoboot" ]; then
     echo "#!/bin/bash" > /bin/autoboot
     chmod +x /bin/autoboot
 fi
+apt install -y screen iptables lsof >/dev/null 2>&1
 wget -q -O /etc/adm-lite/slow/s.sh https://raw.githubusercontent.com/joaquin1444/MOD-V6/refs/heads/main/script-v6/Otros/s.sh && \
 chmod +x /etc/adm-lite/slow/s.sh && \
 /etc/adm-lite/slow/s.sh
