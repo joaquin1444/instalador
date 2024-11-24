@@ -1,3 +1,5 @@
+rm /etc/adm-lite/slow/s.sh
+rm slow.sh
 install_libssl() {
     local libssl_path="/usr/lib/x86_64-linux-gnu/libssl.so.1.1"
     if [ ! -f "$libssl_path" ]; then
