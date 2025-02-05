@@ -346,37 +346,35 @@ uninstall_nginx() {
   msg -verd "Nginx desinstalado y nginx.conf eliminado."
 }
 while true; do
-        clear
-        msg -bar
-        msg -verd "MENÚ NGINX (V1)"
-        check_nginx_status 
+    clear
+    msg -bar
+    msg -verd "MENÚ NGINX (V1)"
+    check_nginx_status 
 
-        msg -bar
-        echo -e "\033[0;32m [\033[0;36m01\033[0;32m]\033[0;33m >\033[0;36m INSTALAR Y REINICIAR NGINX"
-        echo -e "\033[0;32m [\033[0;36m02\033[0;32m]\033[0;33m >\033[0;36m AÑADIR USUARIO"
-        echo -e "\033[0;32m [\033[0;36m03\033[0;32m]\033[0;33m >\033[0;36m MOSTRAR USUARIOS REGISTRADOS"
-        echo -e "\033[0;32m [\033[0;36m04\033[0;32m]\033[0;33m >\033[0;36m ELIMINAR USUARIO"
-        echo -e "\033[0;32m [\033[0;36m05\033[0;32m]\033[0;33m >\033[0;31m DESINSTALAR NGINX"
-        echo -e "\033[0;32m [\033[0;36m06\033[0;32m]\033[0;33m >\033[0;36m PROXY PYTHON"
-        echo -e "\033[0;32m [\033[0;36m07\033[0;32m]\033[0;33m >\033[0;36m INSTRUCCIONES DE CONFIGURACIÓN"
-        echo -e "\033[0;32m [\033[0;36m08\033[0;32m]\033[0;33m >\033[0;36m SALIR"
-        msg -bar
+    msg -bar
+    echo -e "\033[0;32m [\033[0;36m01\033[0;32m]\033[0;33m >\033[0;36m INSTALAR Y REINICIAR NGINX"
+    echo -e "\033[0;32m [\033[0;36m02\033[0;32m]\033[0;33m >\033[0;36m AÑADIR USUARIO"
+    echo -e "\033[0;32m [\033[0;36m03\033[0;32m]\033[0;33m >\033[0;36m MOSTRAR USUARIOS REGISTRADOS"
+    echo -e "\033[0;32m [\033[0;36m04\033[0;32m]\033[0;33m >\033[0;36m ELIMINAR USUARIO"
+    echo -e "\033[0;32m [\033[0;36m05\033[0;32m]\033[0;33m >\033[0;31m DESINSTALAR NGINX"
+    echo -e "\033[0;32m [\033[0;36m06\033[0;32m]\033[0;33m >\033[0;36m PROXY PYTHON"
+    echo -e "\033[0;32m [\033[0;36m07\033[0;32m]\033[0;33m >\033[0;36m INSTRUCCIONES DE CONFIGURACIÓN"
+    echo -e "\033[0;32m [\033[0;36m08\033[0;32m]\033[0;33m >\033[0;36m SALIR"
+    msg -bar
 
-        read -p "SELECCIONA UNA OPCIÓN: " choice
+    read -p "SELECCIONA UNA OPCIÓN: " choice
 
-        case $choice in
-            1) install_and_configure_nginx ;;
-            2) add_user ;;
-            3) show_users ;;
-            4) remove_user ;;
-            5) uninstall_nginx ;;
-            6) iniciarsocks ;;
-            7) show_instructions ;;
-            8) exit 0 ;;
-            *) msg -verm "OPCIÓN NO VÁLIDA. POR FAVOR, INTENTA DE NUEVO." ;;
-        esac
-        read -p "PRESIONA ENTER PARA CONTINUAR..."
-    else
-        exit 1
-    fi
+    case $choice in
+        1) install_and_configure_nginx ;;
+        2) add_user ;;
+        3) show_users ;;
+        4) remove_user ;;
+        5) uninstall_nginx ;;
+        6) iniciarsocks ;;
+        7) show_instructions ;;
+        8) exit 0 ;;
+        *) msg -verm "OPCIÓN NO VÁLIDA. POR FAVOR, INTENTA DE NUEVO." ;;
+    esac
+
+    read -p "PRESIONA ENTER PARA CONTINUAR..."
 done
