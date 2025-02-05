@@ -88,9 +88,7 @@ if [ ! -x "$SCRIPT_PATH" ]; then
     sudo chmod +x "$SCRIPT_PATH"
 fi
 
-if [ ! -f "/etc/nginx/user_data.txt" ]; then
-        touch "/etc/nginx/user_data.txt"
-    fi
+
 install_and_configure_nginx() {
   sudo apt install nginx -y
   
@@ -348,9 +346,6 @@ uninstall_nginx() {
   msg -verd "Nginx desinstalado y nginx.conf eliminado."
 }
 while true; do
-    fum_ver
-    
-    if [ $? -eq 0 ]; then
         clear
         msg -bar
         msg -verd "MENÚ NGINX (V1)"
